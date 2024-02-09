@@ -1,15 +1,16 @@
-﻿using System.Threading.Channels;
+﻿namespace WebParser;
 
-namespace WebParser
+internal class Program
 {
-    internal class Program
+    static async Task Main(string[] args)
     {
-        static async Task Main(string[] args)
-        {
-            await Console.Out.WriteLineAsync("Введите url статьи с Хабра для парсинга: ");
-            string url = Console.ReadLine();
-            var article = Parser.CreateArticle(await Parser.GetHTML(url),url);            
-            await ArticleWriter.WriteArticleAsync(article);
-        }      
+        using var httpClient = new HttpClient();
+        IArticleParser parser = new HabrArticleHtmlAgilityParser(httpClient);
+        await Console.Out.WriteLineAsync("Введите url статьи с Хабра для парсинга: ");
+        string url = Console.ReadLine();
+        //валидация url
+        var article = await parser.ParseArticle(url);
+        await ArticleWriter.WriteArticleAsync(article);
+        // ДЗ: Еще одну реализацию IArticleParser, которая будет парсить через Playwright
     }
 }
