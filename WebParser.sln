@@ -5,6 +5,12 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebParser", "WebParser\WebParser.csproj", "{02FC6569-20DA-4E07-A6DF-E7108C186D73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticlesAnalyzer.BlazorClient", "ArticlesAnalyzer.BlazorClient\ArticlesAnalyzer.BlazorClient.csproj", "{F811E622-EE42-4C30-9E3D-C5760BD05639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticlesAnalyzer.BlazorServer", "ArticlesAnalyzer.BlazorServer\ArticlesAnalyzer.BlazorServer.csproj", "{2D426E25-AD9E-4090-9AC1-6D0862D18811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticlesAnalyzer.Core", "ArticlesAnalyzer.Core\ArticlesAnalyzer.Core.csproj", "{D499E266-6E75-451A-A028-A7610D6CACE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{02FC6569-20DA-4E07-A6DF-E7108C186D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02FC6569-20DA-4E07-A6DF-E7108C186D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02FC6569-20DA-4E07-A6DF-E7108C186D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F811E622-EE42-4C30-9E3D-C5760BD05639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F811E622-EE42-4C30-9E3D-C5760BD05639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F811E622-EE42-4C30-9E3D-C5760BD05639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F811E622-EE42-4C30-9E3D-C5760BD05639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D426E25-AD9E-4090-9AC1-6D0862D18811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D426E25-AD9E-4090-9AC1-6D0862D18811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D426E25-AD9E-4090-9AC1-6D0862D18811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D426E25-AD9E-4090-9AC1-6D0862D18811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D499E266-6E75-451A-A028-A7610D6CACE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D499E266-6E75-451A-A028-A7610D6CACE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D499E266-6E75-451A-A028-A7610D6CACE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D499E266-6E75-451A-A028-A7610D6CACE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

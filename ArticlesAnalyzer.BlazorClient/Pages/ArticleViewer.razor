@@ -1,0 +1,48 @@
+@page "/ArticleViewer"
+@using System.ComponentModel.DataAnnotations
+@using ArticlesAnalyzer.Core.Domain
+
+@inject IArticleParser ArticleParser
+
+<h3>ArticleViewer</h3>
+
+<EditForm Model="_formModel" OnValidSubmit="StartParsing">
+    <DataAnnotationsValidator />
+
+    <div class="form-group">
+        <label for="Uri">Введите URI статьи</label>
+        <InputText id="Uri" class="form-control" @bind-Value="_formModel.Uri" />
+        <ValidationMessage For="@(() => _formModel.Uri)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Парсить</button>
+</EditForm>
+
+@if (_parsedArticle is not null)
+{
+    <h4>@_parsedArticle.Title</h4>
+    <table class="table">
+        @foreach (var s in _parsedArticle.Body)
+        {
+            <tr>
+                <td>@s</td>
+            </tr>
+        }
+    </table>
+}
+
+@code {
+    Article? _parsedArticle;
+    
+    private async Task StartParsing()
+    {
+        _parsedArticle = await ArticleParser.ParseArticle(_formModel.Uri);
+    }
+    
+    private readonly Model _formModel = new();
+    private class Model
+    {
+        [Required, Url(ErrorMessage = "URL невалидный")] // System.ComponentModel.DataAnnotations
+        public string Uri { get; set; }
+    }
+}
